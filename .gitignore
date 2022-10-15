@@ -1,2 +1,3 @@
 # Project exclude paths
 /mimir/node_modules/
+.idea
