@@ -1,11 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {App} from './components/pages/App'
-import './index.css'
+import ReactDOM from 'react-dom/client'
+import {App} from "./components/pages/App";
+import {BrowserRouter} from 'react-router-dom'
+import {createGlobalStyle} from 'styled-components'
 
-ReactDOM.render(
-    <React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+const GlobalStyle = createGlobalStyle`
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+  }
+`
+
+root.render(
+    <BrowserRouter>
+        <GlobalStyle/>
         <App/>
-    </React.StrictMode>,
-    document.getElementById('root')
+    </BrowserRouter>
 )
