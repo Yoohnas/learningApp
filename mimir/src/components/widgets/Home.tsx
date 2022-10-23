@@ -2,10 +2,10 @@ interface Props {
 
 }
 
-export const NotFound = ({}: Props) => {
+export const Home = ({}: Props) => {
     return (
         <div>
-            NotFound
+            home
         </div>
     )
 }

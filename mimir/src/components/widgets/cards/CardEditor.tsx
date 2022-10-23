@@ -1,18 +1,18 @@
-import { useParams } from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 type CardEditorParams = {
-	id: string
+    id: string
 }
 
 interface Props {
 
 }
 
-export const CardEditor = ({  }: Props) => {
-	const { id } = useParams<CardEditorParams>()
-	return (
-		<div>
-			Cardeditor {id}
-		</div>
-	)
+export const CardEditor = ({}: Props) => {
+    const {id} = useParams<CardEditorParams>()
+    return (
+        <div>
+            Cardeditor {id}
+        </div>
+    )
 }

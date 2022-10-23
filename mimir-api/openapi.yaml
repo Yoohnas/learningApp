@@ -107,7 +107,7 @@ paths:
     post:
       tags:
         - Game Loop
-      summary: Start a new game
+      summary: Home a new game
       responses:
         '200':
           description: game started

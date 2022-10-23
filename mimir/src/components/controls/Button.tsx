@@ -13,9 +13,9 @@ export const Button = ({onClick, disabled, children}: Props) => {
     }
 
     return (
-            <StyledButton onClick={onClick} disabled={disabled} className={className}>
-                {children}
-            </StyledButton>
+        <StyledButton onClick={onClick} disabled={disabled} className={className}>
+            {children}
+        </StyledButton>
     )
 }
 

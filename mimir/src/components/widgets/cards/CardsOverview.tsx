@@ -2,10 +2,10 @@ interface Props {
 
 }
 
-export const CardsOverview = ({  }: Props) => {
-	return (
-		<div>
-			Cardmanagement
-		</div>
-	)
+export const CardsOverview = ({}: Props) => {
+    return (
+        <div>
+            Cardmanagement
+        </div>
+    )
 }

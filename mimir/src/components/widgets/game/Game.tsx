@@ -1,11 +1,13 @@
+import {Question} from "../../../models/Question";
+
 interface Props {
-	setAnswer: (id: string, answer: string) => void
+    setAnswer: (question: Question, answer: string) => void
 }
 
-export const Game = ({ setAnswer }: Props) => {
-	return (
-		<div>
-			Game
-		</div>
-	)
+export const Game = ({setAnswer}: Props) => {
+    return (
+        <div>
+            Game
+        </div>
+    )
 }
