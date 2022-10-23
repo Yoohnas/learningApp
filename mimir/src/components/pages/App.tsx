@@ -6,14 +6,11 @@ import {Game} from "../widgets/game/Game";
 import {End} from "../widgets/game/End";
 import {Routes, Route} from 'react-router-dom'
 import {NotFound} from "./NotFound";
-import {CardsOverview} from "../widgets/cards/CardsOverview";
 import {Cards} from "../widgets/cards/Cards";
 import {Layout} from "./Layout";
 import {CardEditor} from "../widgets/cards/CardEditor";
-
-export const ROUTE_HOME = '/'
-export const ROUTE_CARDS = 'cards'
-export const ROUTE_GAME = 'game'
+import {Overview} from "../widgets/cards/Overview";
+import {ROUTE_CARDS, ROUTE_GAME, ROUTE_HOME} from "./Constants";
 
 export const App = () => {
     const [cards, setCards] = useState<Card[]>(DefaultCards)
@@ -58,7 +55,7 @@ export const App = () => {
             <Route path={ROUTE_HOME} element={<Layout/>}>
                 <Route index element={<Home/>}/>
                 <Route path={ROUTE_CARDS} element={<Cards/>}>
-                    <Route index element={<CardsOverview/>}/>
+                    <Route index element={<Overview/>}/>
                     <Route path={":id"} element={<CardEditor/>}/>
                 </Route>
                 <Route path={ROUTE_GAME} element={<Game setAnswer={setAnswer}/>}/>
