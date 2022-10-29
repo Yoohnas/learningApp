@@ -1,7 +1,7 @@
 import React from 'react';
 import {Main} from "./components/pages/Main";
 import {Routes, Route} from 'react-router-dom'
-import {NotFound} from "./components/pages/NotFound";
+import {NotFound} from "./components/pages/404NotFound";
 import {Cards} from "./components/pages/Cards";
 import {Layout} from "./components/pages/Layout";
 import {CardEditor} from "./components/widgets/card/CardEditor";
