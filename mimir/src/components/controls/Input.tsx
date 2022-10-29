@@ -16,7 +16,7 @@ const InputBase = styled.input`
   border: none;
   border-bottom: 3px solid cadetblue;
   width: 350px;
-  font-size: 25px;
+  font-size: 20px;
   color: cadetblue;
   margin: 15px;
 `

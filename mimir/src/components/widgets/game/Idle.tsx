@@ -7,19 +7,12 @@ export const Idle = () => {
     }
 
     return (
-        <Container>
+        <div>
             <DefaultButton onClick={startNewGame}>Start New Game</DefaultButton>
             <SubText>Idle</SubText>
-        </Container>
+        </div>
     )
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 16px;
-`
 
 const SubText = styled.div`
   padding: 50px;

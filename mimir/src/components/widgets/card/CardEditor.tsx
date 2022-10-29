@@ -54,17 +54,19 @@ export const CardEditor = () => {
 }
 
 const Container = styled.div`
-  margin: 20px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  background: black;
+`
+
+const EditElement = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 const CardSide = styled.div`
   margin-left: 15px;
   font-weight: 500;
-  font-size: 25px;
-`
-const EditElement = styled.div`
-  display: flex;
-  flex-direction: column;
+  font-size: 22px;
 `

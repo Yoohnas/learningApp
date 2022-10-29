@@ -3,14 +3,21 @@ import {Outlet} from 'react-router-dom'
 
 export const Cards = () => {
     return (
-        <div>
-            <PageTitle>Game Cards</PageTitle>
+        <Container>
+            <Title>Game Cards</Title>
             <Outlet/>
-        </div>
+        </Container>
     )
 }
 
-const PageTitle = styled.div`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+`
+
+const Title = styled.div`
   width: 100%;
   max-width: 200px;
   margin: 26px auto;

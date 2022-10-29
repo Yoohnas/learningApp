@@ -12,7 +12,10 @@ export function Layout() {
 }
 
 const Container = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   grid-template-rows: auto 1fr auto;
   height: 100%;
+  width: 100%;
 `

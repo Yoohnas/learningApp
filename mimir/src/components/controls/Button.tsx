@@ -22,9 +22,10 @@ export const Button = ({onClick, disabled, children}: Props) => {
 export const ButtonBase = css`
   border: none;
   border-radius: 4px;
-  font-size: 22px;
+  font-size: 20px;
   color: white;
-  padding: 4px 8px;
+  padding: 10px;
+  margin: 10px;
 `
 
 export const DefaultButton = styled.button`

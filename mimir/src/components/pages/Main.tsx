@@ -3,8 +3,9 @@ import {Context as RoundContext} from "../../store/round/Context";
 import {Idle} from "../widgets/game/Idle";
 import {Ongoing} from "../widgets/game/Ongoing";
 import {Result} from "../widgets/game/Result";
+import styled from "styled-components/macro";
 
-export const Home = () => {
+export const Main = () => {
     const {questions, progress} = useContext(RoundContext)
 
     const isIdle = (): boolean => {
@@ -32,8 +33,15 @@ export const Home = () => {
     }
 
     return (
-        <div>
+        <Container>
             {getPage()}
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
+`

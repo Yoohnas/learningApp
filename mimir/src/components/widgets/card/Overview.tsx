@@ -39,7 +39,7 @@ export const Overview = () => {
     }
 
     return (
-        <Column>
+        <div>
             <Row>
                 <Input value={front} onChange={setFront} placeholder="Front"/>
                 <Input value={back} onChange={setBack} placeholder="Back"/>
@@ -58,27 +58,21 @@ export const Overview = () => {
                     </DefaultButton>
                 </Row>
             ))}
-        </Column>
+        </div>
     )
 }
-
-const Text = styled.div`
-  display: flex;
-  margin: 12px;
-  width: 300px;
-  font-size: 25px;
-`
-
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 12px;
-`
 
 const Row = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 12px;
+  justify-content: space-between;
+`
+
+const Text = styled.div`
+  display: flex;
+  margin: 12px;
+  width: 300px;
+  font-size: 20px;
 `
