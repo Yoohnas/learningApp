@@ -92,7 +92,7 @@ paths:
   /game:
     get:
       tags:
-        - Game Loop
+        - Ongoing Loop
       summary: Get current game
       responses:
         '200':
@@ -100,13 +100,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Game'
+                $ref: '#/components/schemas/Ongoing'
         '404':
           description: game not found
 
     post:
       tags:
-        - Game Loop
+        - Ongoing Loop
       summary: Home a new game
       responses:
         '200':
@@ -114,13 +114,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Game'
+                $ref: '#/components/schemas/Ongoing'
         '409':
           description: game already started
 
     patch:
       tags:
-        - Game Loop
+        - Ongoing Loop
       summary: Set answer for current card
       requestBody:
         content:
@@ -133,7 +133,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Game'
+                $ref: '#/components/schemas/Ongoing'
         '400':
           description: no card left
         '404':
@@ -141,7 +141,7 @@ paths:
 
     delete:
       tags:
-        - Game Loop
+        - Ongoing Loop
       summary: Delete current game
       responses:
         '204':

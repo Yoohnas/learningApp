@@ -1,7 +1,7 @@
-export const End = () => {
+export const Ongoing = () => {
     return (
         <div>
-            end
+            Result
         </div>
     )
 }

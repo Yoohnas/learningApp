@@ -1,6 +1,6 @@
 import React from 'react';
 import {Home} from "./components/pages/Home";
-import {Game} from "./components/widgets/game/Game";
+import {Ongoing} from "./components/widgets/game/Ongoing";
 import {Routes, Route} from 'react-router-dom'
 import {NotFound} from "./components/pages/NotFound";
 import {Cards} from "./components/pages/Cards";
@@ -18,7 +18,7 @@ export const App = () => {
                     <Route index element={<Overview/>}/>
                     <Route path={":id"} element={<CardEditor/>}/>
                 </Route>
-                <Route path={ROUTE_GAME} element={<Game/>}/>
+                <Route path={ROUTE_GAME} element={<Ongoing/>}/>
             </Route>
             <Route path="/*" element={<NotFound/>}/>
         </Routes>

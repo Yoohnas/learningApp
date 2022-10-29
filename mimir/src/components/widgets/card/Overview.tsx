@@ -4,7 +4,7 @@ import {Input} from 'components/controls/Input'
 import {DefaultButton} from "../../controls/Button";
 import styled from "styled-components/macro";
 import {ROUTE_CARDS} from "../../../Constants";
-import {CardContext} from "../../../store/card/cardContext";
+import {Context as CardContext} from "../../../store/card/Context";
 import {addCard, fetchCards, removeCard} from "../../../backend/backend";
 import {Type} from "../../../models/card/Action";
 import {Card} from "../../../models/card/Card";
@@ -18,7 +18,7 @@ export const Overview = () => {
     useEffect(() => {
         const onMount = async () => {
             const cards = await fetchCards()
-            dispatch({type: Type.FETCH, cards: cards})
+            dispatch({type: Type.GET, cards: cards})
         }
         // noinspection JSIgnoredPromiseFromCall
         onMount()

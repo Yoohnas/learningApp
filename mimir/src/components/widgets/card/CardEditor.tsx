@@ -2,10 +2,10 @@ import {useNavigate} from 'react-router-dom'
 import {useParams} from 'react-router-dom'
 import {useContext, useEffect, useState} from "react";
 import {Input} from 'components/controls/Input'
-import {ROUTE_BACKEND_CARDS, ROUTE_CARDS} from "../../../Constants";
+import {ROUTE_CARDS} from "../../../Constants";
 import {DefaultButton} from "../../controls/Button";
 import styled from "styled-components/macro";
-import {CardContext} from "../../../store/card/cardContext";
+import {Context as CardContext} from "../../../store/card/Context";
 import {updateCard} from "../../../backend/backend";
 import {Type} from "../../../models/card/Action";
 
@@ -39,32 +39,32 @@ export const CardEditor = () => {
     }
 
     return (
-        <EditCards>
-            <EditSection>
-                <CardTitle>Front</CardTitle>
+        <Container>
+            <EditElement>
+                <CardSide>Front</CardSide>
                 <Input value={front} onChange={setFront} placeholder="Front"/>
-            </EditSection>
-            <EditSection>
-                <CardTitle>Back</CardTitle>
+            </EditElement>
+            <EditElement>
+                <CardSide>Back</CardSide>
                 <Input value={back} onChange={setBack} placeholder="Back"/>
-            </EditSection>
+            </EditElement>
             <DefaultButton onClick={() => update()}>Update</DefaultButton>
-        </EditCards>
+        </Container>
     )
 }
 
-const EditCards = styled.div`
+const Container = styled.div`
   margin: 20px;
   display: flex;
   flex-direction: row;
 `
 
-const CardTitle = styled.div`
+const CardSide = styled.div`
   margin-left: 15px;
   font-weight: 500;
   font-size: 25px;
 `
-const EditSection = styled.div`
+const EditElement = styled.div`
   display: flex;
   flex-direction: column;
 `

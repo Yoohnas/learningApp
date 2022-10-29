@@ -1,7 +1,7 @@
-export const Game = () => {
+export const Result = () => {
     return (
         <div>
-            Game
+            end
         </div>
     )
 }

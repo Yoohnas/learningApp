@@ -1,9 +1,9 @@
 import {Action, Type} from 'models/card/Action'
 import {State} from 'models/card/State'
 
-export function cardReducer(state: State, action: Action): State {
+export function reducer(state: State, action: Action): State {
     switch (action.type) {
-        case Type.FETCH:
+        case Type.GET:
             return {
                 ...state,
                 cards: action.cards

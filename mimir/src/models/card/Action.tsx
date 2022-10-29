@@ -1,14 +1,14 @@
 import { Card } from "./Card"
 
 export enum Type {
-    FETCH = "fetch",
+    GET = "get",
     ADD = "add",
     UPDATE = "update",
     REMOVE = "remove",
 }
 
-type fetch = {
-    type: Type.FETCH
+type get = {
+    type: Type.GET
     cards: Card[]
 }
 
@@ -27,4 +27,4 @@ type remove = {
     card: Card
 }
 
-export type Action = fetch | add | update | remove
+export type Action = get | add | update | remove

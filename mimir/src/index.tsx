@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client'
 import {App} from "./App";
 import {BrowserRouter as Router} from 'react-router-dom'
 import {createGlobalStyle} from 'styled-components'
-import {CardProvider} from "./store/card/cardContext";
+import {Provider as CardProvider} from "./store/card/Context";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
