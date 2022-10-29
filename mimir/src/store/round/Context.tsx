@@ -5,7 +5,7 @@ import {Action} from 'models/round/Action'
 import {reducer, initialState as initialStateRound} from './Reducer'
 import {createContext, ReactNode, useReducer} from "react";
 
-interface AppState extends State {
+export interface AppState extends State {
     dispatch: (action: Action) => void
 }
 

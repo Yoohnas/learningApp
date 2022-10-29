@@ -2,18 +2,35 @@ import styled from 'styled-components/macro'
 import {useNavigate} from 'react-router-dom'
 import {ROUTE_CARDS, ROUTE_MAIN} from "../../Constants";
 import {BrightButton, DefaultButton} from "../controls/Button";
+import {useContext} from "react";
+import {Context as RoundContext} from "../../store/round/Context";
+import {isIdle, isOngoing, isResult} from "../../backend/Utility";
 
 export function AppBar() {
     const navigate = useNavigate();
+    const {round, progress} = useContext(RoundContext)
+
+    const getButtonName = () => {
+        if (isIdle(progress)) {
+            return "New Game"
+        } else if (isOngoing(progress, round)) {
+            return "Solve #" + progress
+        } else if (isResult(progress, round)) {
+            return "Finished"
+        } else {
+            return null
+        }
+    }
 
     return (
         <Container>
             <Title>Mimir Learning App</Title>
-            <BrightButton onClick={() => navigate(ROUTE_MAIN)}>New Game</BrightButton>
+            <BrightButton onClick={() => navigate(ROUTE_MAIN)}>{getButtonName()}</BrightButton>
             <DefaultButton onClick={() => navigate(ROUTE_CARDS)}>Manage Cards</DefaultButton>
         </Container>
     )
 }
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;

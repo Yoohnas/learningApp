@@ -1,31 +1,20 @@
-import {useContext} from "react";
-import {Context as RoundContext} from "../../store/round/Context";
 import {Idle} from "../widgets/game/Idle";
 import {Ongoing} from "../widgets/game/Ongoing";
 import {Result} from "../widgets/game/Result";
 import styled from "styled-components/macro";
+import {isIdle, isOngoing, isResult} from "../../backend/Utility";
+import {useContext} from "react";
+import {Context as RoundContext} from "../../store/round/Context";
 
 export const Main = () => {
     const {round, progress} = useContext(RoundContext)
 
-    const isIdle = (): boolean => {
-        return progress === 0
-    }
-
-    const isOngoing = (): boolean => {
-        return progress <= round.cardCount
-    }
-
-    const isResult = (): boolean => {
-        return progress > round.cardCount
-    }
-
     const getPage = () => {
-        if (isIdle()) {
+        if (isIdle(progress)) {
             return <Idle/>
-        } else if (isOngoing()) {
+        } else if (isOngoing(progress, round)) {
             return <Ongoing/>
-        } else if (isResult()) {
+        } else if (isResult(progress, round)) {
             return <Result/>
         } else {
             return null
