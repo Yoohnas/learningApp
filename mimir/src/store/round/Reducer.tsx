@@ -6,20 +6,20 @@ export function reducer(state: State, action: Action): State {
         case Type.UPDATE:
             return {
                 ...state,
-                questions: action.questions
+                round: action.round
             }
 
         case Type.CLEAR:
             return {
                 ...state,
-                questions: initialState.questions,
+                round: initialState.round,
                 progress: initialState.progress
             }
 
-        case Type.GET_QUESTIONS:
+        case Type.GET_ROUND:
             return {
                 ...state,
-                questions: action.questions
+                round: action.round
             }
 
         case Type.GET_PROGRESS:
@@ -37,10 +37,15 @@ export function reducer(state: State, action: Action): State {
 }
 
 export const initialState: State = {
-    questions: [{
-        id: "",
-        cardId: "",
-        answer: ""
-    }],
+    round: {
+        front:'',
+        cardCount: 0,
+        solved: [{
+            id: "",
+            front: "",
+            back: "",
+            answer: "",
+            accepted: false}
+        ]},
     progress: 0
 }

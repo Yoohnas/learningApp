@@ -2,10 +2,10 @@ import {useNavigate} from 'react-router-dom'
 import {useContext, useEffect, useState} from "react";
 import {Input} from 'components/controls/Input'
 import {DefaultButton} from "../../controls/Button";
-import styled from "styled-components/macro";
+import styled, {css} from "styled-components/macro";
 import {ROUTE_CARDS} from "../../../Constants";
 import {Context as CardContext} from "../../../store/card/Context";
-import {addCard, fetchCards, removeCard} from "../../../backend/backend";
+import {addCard, fetchCards, removeCard} from "../../../backend/card/backend";
 import {Type} from "../../../models/card/Action";
 import {Card} from "../../../models/card/Card";
 
@@ -40,14 +40,14 @@ export const Overview = () => {
 
     return (
         <div>
-            <Row>
+            <AddRow>
                 <Input value={front} onChange={setFront} placeholder="Front"/>
                 <Input value={back} onChange={setBack} placeholder="Back"/>
                 <DefaultButton onClick={() => add(front, back)}>Add Card</DefaultButton>
-            </Row>
+            </AddRow>
 
             {cards?.map(card => (
-                <Row key={card.id}>
+                <CardRow key={card.id}>
                     <Text>{card.front}</Text>
                     <Text>{card.back}</Text>
                     <DefaultButton onClick={() => {navigate(`${ROUTE_CARDS}/${card.id}`)}}>
@@ -56,23 +56,31 @@ export const Overview = () => {
                     <DefaultButton onClick={() => remove(card)}>
                         Remove Card
                     </DefaultButton>
-                </Row>
+                </CardRow>
             ))}
         </div>
     )
 }
 
-const Row = styled.div`
+
+const RowBase = css`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 12px;
   justify-content: space-between;
+`
+
+const AddRow = styled.div`
+  ${RowBase};
+  margin-bottom: 50px;
+`
+
+const CardRow = styled.div`
+  ${RowBase};
 `
 
 const Text = styled.div`
   display: flex;
-  margin: 12px;
-  width: 300px;
+  width: 350px;
   font-size: 20px;
 `

@@ -1,5 +1,6 @@
-import {ROUTE_BACKEND_CARDS} from "../Constants";
-import {Card, createCard} from "../models/card/Card";
+import {ROUTE_BACKEND_CARDS} from "../../Constants";
+import {Card, createCard} from "../../models/card/Card";
+import {handleError} from "../Utility";
 
 export enum Type {
     POST = "post",
@@ -38,12 +39,6 @@ export const updateCard = async (id: string, front: string, back: string): Promi
     handleError(response);
 
     return await response.json();
-}
-
-const handleError = (response: Response) => {
-    if (!response.ok) {
-        throw new Error(`Error-Status: ${response.status}`)
-    }
 }
 
 const getRequest = (type: Type, card: Card): RequestInit => {

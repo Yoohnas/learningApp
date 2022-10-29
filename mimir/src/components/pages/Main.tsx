@@ -6,18 +6,18 @@ import {Result} from "../widgets/game/Result";
 import styled from "styled-components/macro";
 
 export const Main = () => {
-    const {questions, progress} = useContext(RoundContext)
+    const {round, progress} = useContext(RoundContext)
 
     const isIdle = (): boolean => {
         return progress === 0
     }
 
     const isOngoing = (): boolean => {
-        return progress < questions.length
+        return progress < round.cardCount
     }
 
     const isResult = (): boolean => {
-        return progress === questions.length
+        return progress === round.cardCount
     }
 
     const getPage = () => {
@@ -44,4 +44,5 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 16px;
+  width: 100%;
 `

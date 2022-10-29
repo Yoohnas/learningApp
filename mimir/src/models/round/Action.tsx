@@ -1,25 +1,26 @@
-import {Question} from "./Question";
+import {Round} from "./Round";
 
 export enum Type {
-    GET_QUESTIONS = "get_questions",
-    GET_PROGRESS = "get_progress",
-    SET_PROGRESS = "set_progress",
     UPDATE = "update",
     CLEAR = "clear",
+    GET_ROUND = "get_questions",
+    GET_PROGRESS = "get_progress",
+    SET_PROGRESS = "set_progress",
 }
 
 type update = {
     type: Type.UPDATE
-    questions: Question[]
+    round: Round
 }
 
 type clear = {
     type: Type.CLEAR
+    round: Round
 }
 
-type getQuestions = {
-    type: Type.GET_QUESTIONS
-    questions: Question[]
+type getRound = {
+    type: Type.GET_ROUND
+    round: Round
 }
 
 type getProgress = {
@@ -32,4 +33,4 @@ type setProgress = {
     progress: number
 }
 
-export type Action = update | clear | getQuestions | getProgress| setProgress
+export type Action = update | clear | getRound | getProgress| setProgress

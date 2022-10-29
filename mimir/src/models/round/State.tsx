@@ -1,6 +1,6 @@
-import {Question} from "./Question";
+import {Round} from "./Round";
 
 export interface State {
-    questions: Question[]
+    round: Round
     progress: number
 }

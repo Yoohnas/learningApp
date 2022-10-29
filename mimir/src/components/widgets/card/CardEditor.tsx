@@ -6,7 +6,7 @@ import {ROUTE_CARDS} from "../../../Constants";
 import {DefaultButton} from "../../controls/Button";
 import styled from "styled-components/macro";
 import {Context as CardContext} from "../../../store/card/Context";
-import {updateCard} from "../../../backend/backend";
+import {updateCard} from "../../../backend/card/backend";
 import {Type} from "../../../models/card/Action";
 
 type CardEditorParams = {
@@ -56,17 +56,17 @@ export const CardEditor = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  background: black;
+  justify-content: space-between;
 `
 
 const EditElement = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 50px;
 `
 
 const CardSide = styled.div`
-  margin-left: 15px;
   font-weight: 500;
   font-size: 22px;
+  margin-bottom: 20px;
 `

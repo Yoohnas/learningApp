@@ -18,5 +18,4 @@ const InputBase = styled.input`
   width: 350px;
   font-size: 20px;
   color: cadetblue;
-  margin: 15px;
 `
