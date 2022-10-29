@@ -42,7 +42,7 @@ export const CardEditor = () => {
         <Container>
             <EditElement>
                 <CardSide>Front</CardSide>
-                <Input value={front} onChange={setFront} placeholder="Front"/>
+                <Input value={front} onChange={setFront} placeholder="Front" isAutoFocus={true}/>
             </EditElement>
             <EditElement>
                 <CardSide>Back</CardSide>

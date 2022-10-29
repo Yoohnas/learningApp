@@ -41,7 +41,7 @@ export const Overview = () => {
     return (
         <div>
             <AddRow>
-                <Input value={front} onChange={setFront} placeholder="Front"/>
+                <Input value={front} onChange={setFront} placeholder="Front" isAutoFocus={true}/>
                 <Input value={back} onChange={setBack} placeholder="Back"/>
                 <DefaultButton onClick={() => add(front, back)}>Add Card</DefaultButton>
             </AddRow>

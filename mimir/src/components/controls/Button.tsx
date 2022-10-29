@@ -2,18 +2,12 @@ import styled, { css } from 'styled-components/macro'
 
 interface Props {
     onClick: () => void
-    disabled?: boolean
     children: string
 }
 
-export const Button = ({onClick, disabled, children}: Props) => {
-    let className = ''
-    if (disabled) {
-        className += ' button--disabled'
-    }
-
+export const Button = ({onClick, children}: Props) => {
     return (
-        <button onClick={onClick} disabled={disabled} className={className}>
+        <button onClick={onClick}>
             {children}
         </button>
     )
@@ -41,7 +35,7 @@ export const DefaultButton = styled.button`
 `
 export const DarkButton = styled.button`
   ${ButtonBase};
-  background: #508285;
+  background: #436e70;
 
   &:hover,
   &:focus {

@@ -57,7 +57,7 @@ export const Ongoing = () => {
             <QuestionContainer>
                 <Front>{front}</Front>
                 <AnswerRow>
-                    <Input value={answer} onChange={setAnswer} placeholder="Answer"/>
+                    <Input value={answer} onChange={setAnswer} placeholder="Answer" isAutoFocus={true}/>
                     <DefaultButton onClick={() => submit()}>Submit</DefaultButton>
                 </AnswerRow>
             </QuestionContainer>
