@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/macro'
+import styled, {css} from 'styled-components/macro'
 
 interface Props {
     onClick: () => void
@@ -25,7 +25,7 @@ export const ButtonBase = css`
 export const DefaultButton = styled.button`
   ${ButtonBase};
   background: cadetblue;
-  &:hover,          
+  &:hover,
   &:focus {
     background: #73bec0;
   }

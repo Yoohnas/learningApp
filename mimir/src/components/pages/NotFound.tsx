@@ -5,7 +5,7 @@ export const NotFound = () => {
         <Container>
             <Title>404 - Page not found</Title>
             <Text>Wenn Mimir wüsste, dass du auf verlorene Seiten gehst, anstatt neue Lernkarten anzulegen und zu
-            lernen wäre er sehr böse mit dir!</Text>
+                lernen wäre er sehr böse mit dir!</Text>
         </Container>
     )
 }

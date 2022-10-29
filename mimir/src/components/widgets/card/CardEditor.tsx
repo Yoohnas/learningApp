@@ -23,7 +23,7 @@ export const CardEditor = () => {
     useEffect(() => {
         const onMount = async () => {
             const card = cards.find(card => card.id === id)
-            if(card){
+            if (card) {
                 setFront(card.front)
                 setBack(card.back)
             }
@@ -35,7 +35,7 @@ export const CardEditor = () => {
     const update = async () => {
         const card = await updateCard(String(id), front, back)
         dispatch({type: Type.UPDATE, card})
-            navigate(ROUTE_CARDS)
+        navigate(ROUTE_CARDS)
     }
 
     return (

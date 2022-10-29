@@ -9,13 +9,9 @@ interface Props {
 
 export const Input = ({value, onChange, placeholder, isAutoFocus}: Props) => {
     if (isAutoFocus) {
-        return (
-            <InputBase type="text" value={value} autoFocus onChange={e => onChange(e.target.value)} placeholder={placeholder}/>
-        )
+        return  <InputBase type="text" value={value} autoFocus onChange={e => onChange(e.target.value)} placeholder={placeholder}/>
     } else {
-        return (
-            <InputBase type="text" value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder}/>
-        )
+        return  <InputBase type="text" value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder}/>
     }
 }
 

@@ -11,7 +11,8 @@ interface AppState extends State {
 
 const initialState: AppState = {
     ...initialStateCard,
-    dispatch: (action: Action) => {}
+    dispatch: (action: Action) => {
+    }
 }
 
 export const Context = createContext<AppState>(initialState)

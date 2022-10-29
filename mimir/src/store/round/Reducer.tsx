@@ -38,7 +38,7 @@ export function reducer(state: State, action: Action): State {
 
 export const initialState: State = {
     round: {
-        front:'',
+        front:"",
         cardCount: 0,
         solved: [{
             id: "",

@@ -35,7 +35,7 @@ export const Overview = () => {
 
     const remove = async (card: Card) => {
         await removeCard(card)
-        dispatch({ type: Type.REMOVE, card: card })
+        dispatch({type: Type.REMOVE, card: card})
     }
 
     return (

@@ -11,7 +11,7 @@ export const Idle = () => {
     const startNewRound = async () => {
         const round = await newRound()
         dispatch({type: Type.UPDATE, round: round})
-        dispatch({type: Type.SET_PROGRESS, progress: progress+1})
+        dispatch({type: Type.SET_PROGRESS, progress: progress + 1})
     }
 
     return (

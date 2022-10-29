@@ -32,4 +32,4 @@ type setProgress = {
     progress: number
 }
 
-export type Action = update | reset | getRound | getProgress| setProgress
+export type Action = update | reset | getRound | getProgress | setProgress

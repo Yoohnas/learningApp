@@ -11,7 +11,8 @@ export interface AppState extends State {
 
 const initialState: AppState = {
     ...initialStateRound,
-    dispatch: (action: Action) => {}
+    dispatch: (action: Action) => {
+    }
 }
 
 export const Context = createContext<AppState>(initialState)
