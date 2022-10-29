@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import {useNavigate} from 'react-router-dom'
 import {ROUTE_CARDS, ROUTE_MAIN} from "../../Constants";
-import {BrightButton, DefaultButton} from "../controls/Button";
+import {DarkButton, DefaultButton} from "../controls/Button";
 import {useContext} from "react";
 import {Context as RoundContext} from "../../store/round/Context";
 import {isIdle, isOngoing, isResult} from "../../backend/Utility";
@@ -25,7 +25,7 @@ export function AppBar() {
     return (
         <Container>
             <Title>Mimir Learning App</Title>
-            <BrightButton onClick={() => navigate(ROUTE_MAIN)}>{getButtonName()}</BrightButton>
+            <DarkButton onClick={() => navigate(ROUTE_MAIN)}>{getButtonName()}</DarkButton>
             <DefaultButton onClick={() => navigate(ROUTE_CARDS)}>Manage Cards</DefaultButton>
         </Container>
     )

@@ -21,7 +21,7 @@ export const Button = ({onClick, disabled, children}: Props) => {
 
 export const ButtonBase = css`
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 20px;
   color: white;
   padding: 10px;
@@ -31,9 +31,24 @@ export const ButtonBase = css`
 export const DefaultButton = styled.button`
   ${ButtonBase};
   background: cadetblue;
-
+  &:hover,          
+  &:focus {
+    background: #73bec0;
+  }
+  &:active {
+    color: #73bec0;
+  }
 `
-export const BrightButton = styled.button`
+export const DarkButton = styled.button`
   ${ButtonBase};
-  background: #73bec0;
+  background: #508285;
+
+  &:hover,
+  &:focus {
+    background: #73bec0;
+  }
+
+  &:active {
+    color: #73bec0;
+  }
 `
