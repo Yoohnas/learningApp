@@ -1,6 +1,6 @@
-import {Idle} from "../widgets/game/Idle";
-import {Ongoing} from "../widgets/game/Ongoing";
-import {Result} from "../widgets/game/Result";
+import {Idle} from "../widgets/round/Idle";
+import {Ongoing} from "../widgets/round/Ongoing";
+import {Result} from "../widgets/round/Result";
 import styled from "styled-components/macro";
 import {isIdle, isOngoing, isResult} from "../../Util/Utility";
 import {useContext} from "react";
