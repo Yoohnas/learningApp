@@ -20,6 +20,7 @@ export const ButtonBase = css`
   color: white;
   padding: 10px;
   margin: 10px;
+  cursor: pointer;
 `
 
 export const DefaultButton = styled.button`
