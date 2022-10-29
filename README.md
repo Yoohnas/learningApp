@@ -1,2 +1,6 @@
 # learningApp
-Web3 Marco / Jonas
+Web3 Projekt
+
+Entwickler:
+Marco Solombrino
+Jonas Cahenzli
