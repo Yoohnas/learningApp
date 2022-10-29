@@ -2,7 +2,7 @@ import {Idle} from "../widgets/round/Idle";
 import {Ongoing} from "../widgets/round/Ongoing";
 import {Result} from "../widgets/round/Result";
 import styled from "styled-components/macro";
-import {isIdle, isOngoing, isResult} from "../../Util/Utility";
+import {isIdle, isOngoing, isResult} from "../../util/Utility";
 import {useContext} from "react";
 import {Context as RoundContext} from "../../store/round/Context";
 

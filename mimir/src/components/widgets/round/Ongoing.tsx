@@ -89,9 +89,7 @@ const RowBase = css`
 const InfoRow = styled.div`
   ${RowBase};
   justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%
+  width: 100%;
 `
 
 const AnswerRow = styled.div`
@@ -105,6 +103,7 @@ const Progress = styled.div`
   font-size: 30px;
   font-weight: 500;
   color: cadetblue;
+  margin-left: 20px;
 `
 
 const Front = styled.div`

@@ -4,7 +4,7 @@ import {ROUTE_CARDS, ROUTE_MAIN} from "../../Constants";
 import {DarkButton, DefaultButton} from "../controls/Button";
 import {useContext} from "react";
 import {Context as RoundContext} from "../../store/round/Context";
-import {isIdle, isOngoing, isResult} from "../../Util/Utility";
+import {isIdle, isOngoing, isResult} from "../../util/Utility";
 
 export function AppBar() {
     const navigate = useNavigate();
