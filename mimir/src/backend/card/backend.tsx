@@ -1,6 +1,6 @@
 import {ROUTE_BACKEND_CARDS} from "../../Constants";
 import {Card, createCard} from "../../models/card/Card";
-import {handleError} from "../Utility";
+import {handleError} from "../../Util/Utility";
 
 export enum Type {
     POST = "post",

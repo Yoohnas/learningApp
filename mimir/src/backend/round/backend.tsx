@@ -1,6 +1,6 @@
 import {ROUTE_BACKEND_ROUND} from "../../Constants";
 import {Round} from "../../models/round/Round";
-import {handleError} from "../Utility";
+import {handleError} from "../../Util/Utility";
 
 export enum Type {
     NEW = "new",
