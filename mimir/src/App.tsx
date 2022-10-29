@@ -17,8 +17,8 @@ export const App = () => {
                     <Route index element={<Overview/>}/>
                     <Route path={":id"} element={<CardEditor/>}/>
                 </Route>
+                <Route path="/*" element={<NotFound/>}/>
             </Route>
-            <Route path="/*" element={<NotFound/>}/>
         </Routes>
     )
 }

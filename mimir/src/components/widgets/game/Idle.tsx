@@ -9,12 +9,12 @@ export const Idle = () => {
     return (
         <div>
             <DefaultButton onClick={startNewGame}>Start New Game</DefaultButton>
-            <SubText>Idle</SubText>
+            <Text>Idle</Text>
         </div>
     )
 }
 
-const SubText = styled.div`
+const Text = styled.div`
   padding: 50px;
   font-size: 22px;
 `
