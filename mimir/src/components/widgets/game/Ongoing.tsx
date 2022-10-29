@@ -1,11 +1,12 @@
 import {useContext, useEffect, useState} from "react";
 import {Context as RoundContext} from '../../../store/round/Context'
-import {ROUTE_BACKEND_ROUND} from "../../../Constants";
+import {ROUTE_BACKEND_ROUND, ROUTE_MAIN} from "../../../Constants";
 import {useNavigate} from "react-router-dom";
 import {Type} from "../../../models/round/Action";
 import styled, {css} from "styled-components/macro";
 import {DefaultButton} from "../../controls/Button";
 import {Input} from "../../controls/Input";
+import {resetRound} from "../../../backend/round/backend";
 
 export const Ongoing = () => {
     const [answer, setAnswer] = useState('')
@@ -33,10 +34,13 @@ export const Ongoing = () => {
     }
 
     const reset = async () => {
+        await resetRound();
+        dispatch({type: Type.RESET})
+        navigate(ROUTE_MAIN)
     }
 
     const getProgressText = () => {
-        return Math.round(round.solved.length/round.cardCount*100).toString()
+        return Math.round(round.solved.length / round.cardCount * 100).toString()
     }
 
     return (

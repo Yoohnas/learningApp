@@ -8,11 +8,15 @@ export enum Type {
 }
 
 export const newRound = async (): Promise<Round> => {
-    await fetch(ROUTE_BACKEND_ROUND, getRequest(Type.RESET));
+    await resetRound();
     const response = await fetch(ROUTE_BACKEND_ROUND, getRequest(Type.NEW));
     handleError(response)
 
     return await response.json();
+};
+
+export const resetRound = async () => {
+    await fetch(ROUTE_BACKEND_ROUND, getRequest(Type.RESET));
 };
 
 const getRequest = (type: Type): RequestInit => {

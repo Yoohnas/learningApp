@@ -9,7 +9,7 @@ export function reducer(state: State, action: Action): State {
                 round: action.round
             }
 
-        case Type.CLEAR:
+        case Type.RESET:
             return {
                 ...state,
                 round: initialState.round,
