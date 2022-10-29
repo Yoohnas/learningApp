@@ -1,6 +1,6 @@
 # Mimir Learning App
 Web3 Projekt
 
-#Entwickler
+## Entwickler
 Marco Solombrino
 Jonas Cahenzli
