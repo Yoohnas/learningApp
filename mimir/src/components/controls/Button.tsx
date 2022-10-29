@@ -35,6 +35,7 @@ export const DefaultButton = styled.button`
 `
 export const DarkButton = styled.button`
   ${ButtonBase};
+  width: 170px;
   background: #436e70;
 
   &:hover,

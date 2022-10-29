@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled, {css} from 'styled-components/macro'
 import {useNavigate} from 'react-router-dom'
 import {ROUTE_CARDS, ROUTE_MAIN} from "../../Constants";
 import {DarkButton, DefaultButton} from "../controls/Button";
@@ -24,9 +24,9 @@ export function AppBar() {
 
     return (
         <Container>
-            <Title>Mimir Learning App</Title>
-            <DarkButton onClick={() => navigate(ROUTE_MAIN)}>{getButtonName()}</DarkButton>
-            <DefaultButton onClick={() => navigate(ROUTE_CARDS)}>Manage Cards</DefaultButton>
+            <FirstElement><Title>Mimir Learning App</Title></FirstElement>
+            <CenterElement><DarkButton onClick={() => navigate(ROUTE_MAIN)}>{getButtonName()}</DarkButton></CenterElement>
+            <LastElement><DefaultButton onClick={() => navigate(ROUTE_CARDS)}>Manage Cards</DefaultButton></LastElement>
         </Container>
     )
 }
@@ -38,8 +38,28 @@ const Container = styled.div`
   align-items: center;
   background: cadetblue;
   height: 80px;
-  width: 100%
+  width: 100%;
 `
+
+const BaseElement = css`
+  display: flex;
+  width: 33.33%;
+`
+
+const FirstElement = styled.div`
+  ${BaseElement};
+`
+
+const CenterElement = styled.div`
+  ${BaseElement};
+  justify-content: center;
+`
+
+const LastElement = styled.div`
+  ${BaseElement};
+  justify-content: flex-end;
+`
+
 
 const Title = styled.div`
   font-size: 30px;
