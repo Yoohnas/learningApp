@@ -1,5 +1,5 @@
 import {ROUTE_BACKEND_CARDS} from "../Constants";
-import {Card, createCard} from "../models/cards/Card";
+import {Card, createCard} from "../models/card/Card";
 
 export enum Type {
     POST = "post",

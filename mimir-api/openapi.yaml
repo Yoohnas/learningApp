@@ -13,10 +13,10 @@ paths:
     get:
       tags:
         - Master Data
-      summary: List all cards
+      summary: List all card
       responses:
         '200':
-          description: listing cards
+          description: listing card
           content:
             application/json:
               schema:
@@ -135,7 +135,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Game'
         '400':
-          description: no cards left
+          description: no card left
         '404':
           description: game not found
 

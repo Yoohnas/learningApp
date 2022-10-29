@@ -1,5 +1,5 @@
-import {State as CardState} from 'models/cards/State'
-import {Action as CardAction} from 'models/cards/Action'
+import {State as CardState} from 'models/card/State'
+import {Action as CardAction} from 'models/card/Action'
 import {cardReducer, initialState as initialStateCard} from './cardReducer'
 import {createContext, ReactNode, useReducer} from "react";
 

@@ -5,9 +5,9 @@ import {Input} from 'components/controls/Input'
 import {ROUTE_BACKEND_CARDS, ROUTE_CARDS} from "../../../Constants";
 import {DefaultButton} from "../../controls/Button";
 import styled from "styled-components/macro";
-import {CardContext} from "../../../store/context";
+import {CardContext} from "../../../store/card/cardContext";
 import {updateCard} from "../../../backend/backend";
-import {Type} from "../../../models/cards/Action";
+import {Type} from "../../../models/card/Action";
 
 type CardEditorParams = {
     id: string

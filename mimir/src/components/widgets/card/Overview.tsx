@@ -2,12 +2,12 @@ import {useNavigate} from 'react-router-dom'
 import {useContext, useEffect, useState} from "react";
 import {Input} from 'components/controls/Input'
 import {DefaultButton} from "../../controls/Button";
-import styled, {css} from "styled-components/macro";
+import styled from "styled-components/macro";
 import {ROUTE_CARDS} from "../../../Constants";
-import {CardContext} from "../../../store/context";
+import {CardContext} from "../../../store/card/cardContext";
 import {addCard, fetchCards, removeCard} from "../../../backend/backend";
-import {Type} from "../../../models/cards/Action";
-import {Card} from "../../../models/cards/Card";
+import {Type} from "../../../models/card/Action";
+import {Card} from "../../../models/card/Card";
 
 export const Overview = () => {
     const [front, setFront] = useState('')

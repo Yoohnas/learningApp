@@ -22,7 +22,6 @@ export const Button = ({onClick, disabled, children}: Props) => {
 export const ButtonBase = css`
   border: none;
   border-radius: 4px;
-  background: cadetblue;
   font-size: 22px;
   color: white;
   padding: 4px 8px;
@@ -30,4 +29,10 @@ export const ButtonBase = css`
 
 export const DefaultButton = styled.button`
   ${ButtonBase};
+  background: cadetblue;
+
+`
+export const BrightButton = styled.button`
+  ${ButtonBase};
+  background: #73bec0;
 `

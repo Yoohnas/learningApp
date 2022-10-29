@@ -9,19 +9,19 @@ const port = 3003
 app.use(bodyParser.json())
 
 // master data
-app.get('/api/cards', (req, res) => {
+app.get('/api/card', (req, res) => {
 	res.send(get('cards'))
 })
 
-app.post('/api/cards', (req, res) => {
+app.post('/api/card', (req, res) => {
 	res.send(insert('cards', req.body))
 })
 
-app.put('/api/cards/:id', (req, res) => {
+app.put('/api/card/:id', (req, res) => {
 	res.send(update('cards', req.body, req.params.id))
 })
 
-app.delete('/api/cards/:id', (req, res) => {
+app.delete('/api/card/:id', (req, res) => {
 	remove('cards', req.params.id)
 	res.sendStatus(204)
 })
