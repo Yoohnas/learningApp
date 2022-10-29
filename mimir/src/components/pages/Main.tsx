@@ -13,11 +13,11 @@ export const Main = () => {
     }
 
     const isOngoing = (): boolean => {
-        return progress < round.cardCount
+        return progress <= round.cardCount
     }
 
     const isResult = (): boolean => {
-        return progress === round.cardCount
+        return progress > round.cardCount
     }
 
     const getPage = () => {

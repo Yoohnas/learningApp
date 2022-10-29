@@ -26,7 +26,7 @@ export const addCard = async (front: string, back: string): Promise<Card> => {
 export const removeCard = async (card: Card) => {
     const response = await fetch(ROUTE_BACKEND_CARDS + card.id, getRequest(Type.REMOVE, card))
     handleError(response)
-};
+}
 
 export const updateCard = async (id: string, front: string, back: string): Promise<Card> => {
     const card: Card = {
@@ -50,7 +50,6 @@ const getRequest = (type: Type, card: Card): RequestInit => {
                 body: JSON.stringify(card),
             }
         case Type.REMOVE:
-            console.log("removeing")
             return {
                 method: "DELETE",
                 headers: {"Content-Type": "application/json"},

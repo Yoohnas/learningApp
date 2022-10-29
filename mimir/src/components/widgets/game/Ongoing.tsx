@@ -6,21 +6,20 @@ import {Type} from "../../../models/round/Action";
 import styled, {css} from "styled-components/macro";
 import {DefaultButton} from "../../controls/Button";
 import {Input} from "../../controls/Input";
-import {resetRound} from "../../../backend/round/backend";
+import {resetRound, submitAnswer} from "../../../backend/round/backend";
 
 export const Ongoing = () => {
+    const navigate = useNavigate()
     const [answer, setAnswer] = useState('')
     const [front, setFront] = useState('')
     const [progressText, setProgressText] = useState('0')
     let {round, progress, dispatch} = useContext(RoundContext)
-    let navigate = useNavigate()
 
     useEffect(() => {
         const onMount = async () => {
             const response = await fetch(ROUTE_BACKEND_ROUND)
             if (response.ok) {
-                const data = await response.json()
-                round = data
+                round = await response.json()
                 setProgressText(getProgressText())
                 setFront(round.front.toString())
                 dispatch({type: Type.UPDATE, round})
@@ -31,6 +30,12 @@ export const Ongoing = () => {
     }, [])
 
     const submit = async () => {
+        round = await submitAnswer(answer);
+        setFront(round.front)
+        setProgressText(getProgressText())
+        setAnswer('')
+        dispatch({type: Type.UPDATE, round})
+        dispatch({type: Type.SET_PROGRESS, progress: progress + 1})
     }
 
     const reset = async () => {
