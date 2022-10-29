@@ -69,7 +69,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px;
+  margin: 20px;
   width: 100%;
 `
 
@@ -116,7 +116,7 @@ const Front = styled.div`
   height: 200px;
   border: 2px solid cadetblue;
   border-radius: 6px;
-  background: #f3fdff;
+  background: #edfdff;
   font-size: 60px;
   color: cadetblue;
   box-shadow: 0 0 20px #ccc;

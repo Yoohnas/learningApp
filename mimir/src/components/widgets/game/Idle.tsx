@@ -15,12 +15,19 @@ export const Idle = () => {
     }
 
     return (
-        <div>
+        <Container>
             <DefaultButton onClick={startNewRound}>Start New Game</DefaultButton>
-            <Text>Idle</Text>
-        </div>
+            <Text>No Game running.</Text>
+        </Container>
     )
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+`
 
 const Text = styled.div`
   padding: 50px;

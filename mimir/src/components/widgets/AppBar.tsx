@@ -27,4 +27,5 @@ const Container = styled.div`
 const Title = styled.div`
   font-size: 30px;
   padding-left: 20px;
+  color: white;
 `
