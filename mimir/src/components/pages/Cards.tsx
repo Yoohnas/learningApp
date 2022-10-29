@@ -15,4 +15,4 @@ const PageTitle = styled.div`
   max-width: 200px;
   margin: 26px auto;
   font-size: 35px;
-`;
+`

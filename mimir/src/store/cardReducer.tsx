@@ -15,6 +15,15 @@ export function cardReducer(state: State, action: Action): State {
                 cards: [...state.cards, action.card]
             }
 
+        case Type.UPDATE:
+            const cards = state.cards.map((card) => {
+                if (card.id === action.card.id) {
+                    return {...card, front: action.card.front, back: action.card.back}
+                }
+                return card
+            })
+            return {...state, cards: cards}
+
         case Type.REMOVE:
             return {
                 ...state,

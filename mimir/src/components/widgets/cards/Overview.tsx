@@ -1,4 +1,4 @@
-import {Outlet, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {useContext, useEffect, useState} from "react";
 import {Input} from 'components/controls/Input'
 import {DefaultButton} from "../../controls/Button";
@@ -13,29 +13,29 @@ export const Overview = () => {
     const [front, setFront] = useState('')
     const [back, setBack] = useState('')
     const {cards, dispatch} = useContext(CardContext)
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
         const onMount = async () => {
             const cards = await fetchCards()
             dispatch({type: Type.FETCH, cards: cards})
-        };
+        }
         // noinspection JSIgnoredPromiseFromCall
-        onMount();
-    }, [dispatch]);
+        onMount()
+    }, [dispatch])
 
     const add = async (front: string, back: string) => {
-        console.log("adding");
-        const newCard = await addCard(front, back);
+        console.log("adding")
+        const newCard = await addCard(front, back)
 
-        dispatch({type: Type.ADD, card: newCard});
-        setFront("");
-        setBack("");
+        dispatch({type: Type.ADD, card: newCard})
+        setFront("")
+        setBack("")
     }
 
     const remove = async (card: Card) => {
-        await removeCard(card);
-        dispatch({ type: Type.REMOVE, card: card });
+        await removeCard(card)
+        dispatch({ type: Type.REMOVE, card: card })
     }
 
     return (

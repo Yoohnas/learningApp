@@ -1,11 +1,14 @@
 import styled from 'styled-components/macro'
-import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {ROUTE_CARDS} from "../../Constants";
+import {DefaultButton} from "../controls/Button";
 
 export function AppBar() {
+    const navigate = useNavigate();
+
     return (
         <Bar>
-            <Link to={ROUTE_CARDS}>Manage Cards</Link>
+            <DefaultButton onClick={() => navigate(ROUTE_CARDS)}>Manage Cards</DefaultButton>
         </Bar>
     )
 }

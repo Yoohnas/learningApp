@@ -3,22 +3,28 @@ import { Card } from "./Card"
 export enum Type {
     FETCH = "fetch",
     ADD = "add",
+    UPDATE = "update",
     REMOVE = "remove",
 }
 
-export type fetch = {
+type fetch = {
     type: Type.FETCH
     cards: Card[]
 }
 
-export type add = {
+type add = {
     type: Type.ADD
     card: Card
 }
 
-export type remove = {
+type update = {
+    type: Type.UPDATE;
+    card: Card;
+}
+
+type remove = {
     type: Type.REMOVE
     card: Card
 }
 
-export type Action = fetch | add | remove
+export type Action = fetch | add | update | remove

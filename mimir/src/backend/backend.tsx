@@ -1,40 +1,71 @@
 import {ROUTE_BACKEND_CARDS} from "../Constants";
 import {Card, createCard} from "../models/cards/Card";
 
+export enum Type {
+    POST = "post",
+    REMOVE = "remove",
+    PUT = "put",
+}
+
 export const fetchCards = async () => {
     const response = await fetch(ROUTE_BACKEND_CARDS)
-    handleError(response);
+    handleError(response)
 
-    return await response.json();
+    return await response.json()
 }
 
 export const addCard = async (front: string, back: string): Promise<Card> => {
-    const newCard = createCard(front, back);
-    const request = {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(newCard),
-    };
-
-    const response = await fetch(ROUTE_BACKEND_CARDS, request);
-    handleError(response);
+    const card = createCard(front, back)
+    const response = await fetch(ROUTE_BACKEND_CARDS, getRequest(Type.POST, card))
+    handleError(response)
 
     return await response.json()
 }
 
 export const removeCard = async (card: Card) => {
-    const request = {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(card),
-    };
-
-    const response = await fetch(ROUTE_BACKEND_CARDS + card.id, request);
+    const response = await fetch(ROUTE_BACKEND_CARDS + card.id, getRequest(Type.REMOVE, card))
     handleError(response)
 };
+
+export const updateCard = async (id: string, front: string, back: string): Promise<Card> => {
+    const card: Card = {
+        id: id,
+        front: front,
+        back: back,
+    }
+
+    const response = await fetch(ROUTE_BACKEND_CARDS + card.id, getRequest(Type.PUT, card))
+    handleError(response);
+
+    return await response.json();
+}
 
 const handleError = (response: Response) => {
     if (!response.ok) {
         throw new Error(`Error-Status: ${response.status}`)
+    }
+}
+
+const getRequest = (type: Type, card: Card): RequestInit => {
+    switch (type) {
+        case Type.POST:
+            return {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(card),
+            }
+        case Type.REMOVE:
+            console.log("removeing")
+            return {
+                method: "DELETE",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(card),
+            }
+        case Type.PUT:
+            return {
+                method: "PUT",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(card),
+            }
     }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import {Home} from "./components/widgets/Home";
+import {Home} from "./components/pages/Home";
 import {Game} from "./components/widgets/game/Game";
 import {Routes, Route} from 'react-router-dom'
 import {NotFound} from "./components/pages/NotFound";
-import {Cards} from "./components/widgets/cards/Cards";
+import {Cards} from "./components/pages/Cards";
 import {Layout} from "./components/pages/Layout";
 import {CardEditor} from "./components/widgets/cards/CardEditor";
 import {Overview} from "./components/widgets/cards/Overview";
@@ -22,5 +22,5 @@ export const App = () => {
             </Route>
             <Route path="/*" element={<NotFound/>}/>
         </Routes>
-    );
+    )
 }
