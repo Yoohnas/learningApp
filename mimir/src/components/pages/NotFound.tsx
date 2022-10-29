@@ -1,8 +1,4 @@
-interface Props {
-
-}
-
-export const NotFound = ({}: Props) => {
+export const NotFound = () => {
     return (
         <div>
             NotFound

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled, { css } from 'styled-components/macro'
 
 interface Props {
     onClick: () => void
@@ -13,12 +13,21 @@ export const Button = ({onClick, disabled, children}: Props) => {
     }
 
     return (
-        <StyledButton onClick={onClick} disabled={disabled} className={className}>
+        <button onClick={onClick} disabled={disabled} className={className}>
             {children}
-        </StyledButton>
+        </button>
     )
 }
 
-const StyledButton = styled.button`
-  background: white;
+export const ButtonBase = css`
+  border: none;
+  border-radius: 4px;
+  background: cadetblue;
+  font-size: 22px;
+  color: white;
+  padding: 4px 8px;
+`
+
+export const DefaultButton = styled.button`
+  ${ButtonBase};
 `

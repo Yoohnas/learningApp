@@ -4,11 +4,7 @@ type CardEditorParams = {
     id: string
 }
 
-interface Props {
-
-}
-
-export const CardEditor = ({}: Props) => {
+export const CardEditor = () => {
     const {id} = useParams<CardEditorParams>()
     return (
         <div>

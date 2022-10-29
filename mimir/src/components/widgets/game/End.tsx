@@ -1,8 +1,4 @@
-interface Props {
-
-}
-
-export const End = ({}: Props) => {
+export const End = () => {
     return (
         <div>
             end

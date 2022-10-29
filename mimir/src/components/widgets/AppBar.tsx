@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 import {Link} from 'react-router-dom'
-import {ROUTE_CARDS} from "../pages/Constants";
+import {ROUTE_CARDS} from "../../Constants";
 
 export function AppBar() {
     return (
@@ -11,9 +11,9 @@ export function AppBar() {
 }
 
 const Bar = styled.div`
+  display: flex;
   background: lightblue;
   padding: 10px;
-  display: flex;
   gap: 10px;
   margin: 20px 0;
 `
